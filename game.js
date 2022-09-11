@@ -7,7 +7,10 @@ let started = false;
 let level = 0;
 
 
-$(document).keydown(function() {
+const element = document.getElementById("level-title");
+element.addEventListener("click", myFunction);
+
+function myFunction() {
   if (!started) {
 
     // The h1 title startssout saying "Press A Key to Start", when the game has started, change this to say "Level 0".
@@ -15,7 +18,7 @@ $(document).keydown(function() {
     nextSequence();
     started = true;
   }
-});
+}
 
 $(".btn").click(function() {
 
@@ -39,7 +42,7 @@ function checkAnswer(currentLevel) {
   } else {
     playSound("wrong");
     $("body").addClass("game-over");
-    $("#level-title").text("Game Over, Press Any Key to Restart");
+    $("#level-title").text("Game Over, Press HERE to Restart");
 
     setTimeout(function() {
       $("body").removeClass("game-over");
