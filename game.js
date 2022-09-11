@@ -13,7 +13,7 @@ element.addEventListener("click", myFunction);
 function myFunction() {
   if (!started) {
 
-    // The h1 title startssout saying "Press A Key to Start", when the game has started, change this to say "Level 0".
+    // The h1 title startssout saying "Press here to Start", when the game has started, change this to say "Level 0".
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
