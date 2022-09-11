@@ -6,19 +6,28 @@ let userClickedPattern = [];
 let started = false;
 let level = 0;
 
-
 const element = document.getElementById("level-title");
 element.addEventListener("click", myFunction);
 
 function myFunction() {
   if (!started) {
 
-    // The h1 title startssout saying "Press here to Start", when the game has started, change this to say "Level 0".
+    // The h1 title startssout saying "Presshere to Start", when the game has started, change this to say "Level 0".
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
   }
 }
+
+// $(document).keydown(function() {
+//   if (!started) {
+//
+//     // The h1 title startssout saying "Press A Key to Start", when the game has started, change this to say "Level 0".
+//     $("#level-title").text("Level " + level);
+//     nextSequence();
+//     started = true;
+//   }
+// });
 
 $(".btn").click(function() {
 
@@ -41,12 +50,15 @@ function checkAnswer(currentLevel) {
     }
   } else {
     playSound("wrong");
-    $("body").addClass("game-over");
-    $("#level-title").text("Game Over, Press HERE to Restart");
 
+    $("body").addClass("game-over");
+    $("#level-title").text(`Game Over!!!  Press here to Restart`);
+    $(".score").text(`Your score: ${level === 0 ? 0 : level - 1}`);
     setTimeout(function() {
       $("body").removeClass("game-over");
     }, 200);
+
+
 
     startOver();
   }
