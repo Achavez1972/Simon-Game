@@ -6,18 +6,33 @@ body {
 }
 
 h2, a {
+
   margin: 5%;
   color: #FEF2BF;
 }
 
 li, footer {
+  /* font-family: 'Press Start 2P',cursive; */
+  /* font-size: 3rem; */
   color: #FEF2BF;
   text-align: left;
 }
 
 #level-title, h1 {
+  /* font-family: 'Press Start 2P', cursive; */
+  /* font-size: 3rem; */
   margin: 5%;
   color: #FEF2BF;
+}
+
+.instructions {
+  width: 95%;
+  font-size: 1.5rem;
+  margin: 0 0 0 40px;
+}
+
+.hidden {
+  display: none;
 }
 
 .container {
